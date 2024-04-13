@@ -1,1 +1,2 @@
-print("vasanth is bad")
+for i in range(10):
+    print(i)
