@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Git & GitHub Guide</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background: #f4f4f4;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .card {
+        background: white;
+        margin-bottom: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    }
+
+    .card-header {
+        background: #24292e;
+        color: white;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    .card-content {
+        display: none;
+        padding: 15px;
+        line-height: 1.8;
+    }
+
+    pre {
+        background: #eee;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        background: #28a745;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #218838;
+    }
+
+    #quizResult {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Git & GitHub Beginner Guide</h1>
+
+    <div class="card">
+        <div class="card-header">1. What is Git?</div>
+        <div class="card-content">
+            <p>
+                Git is a Version Control System that helps track code changes,
+                collaborate with developers, and restore previous versions.
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">2. What is GitHub?</div>
+        <div class="card-content">
+            <p>
+                GitHub is a cloud platform that hosts Git repositories online.
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">3. Initialize Git Repository</div>
+        <div class="card-content">
+<pre>
+git init
+</pre>
+            <p>Creates a new Git repository.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">4. Check Status</div>
+        <div class="card-content">
+<pre>
+git status
+</pre>
+            <p>Shows tracked and untracked files.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">5. Add Files</div>
+        <div class="card-content">
+<pre>
+git add .
+</pre>
+            <p>Add all files to staging area.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">6. Commit Changes</div>
+        <div class="card-content">
+<pre>
+git commit -m "Initial Commit"
+</pre>
+            <p>Saves your project snapshot.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">7. Push to GitHub</div>
+        <div class="card-content">
+<pre>
+git push origin main
+</pre>
+            <p>Uploads code to GitHub.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">8. Clone Repository</div>
+        <div class="card-content">
+<pre>
+git clone https://github.com/user/repo.git
+</pre>
+            <p>Downloads repository from GitHub.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">9. Pull Latest Changes</div>
+        <div class="card-content">
+<pre>
+git pull
+</pre>
+            <p>Gets latest updates from GitHub.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">Git Quiz</div>
+        <div class="card-content">
+
+            <p>Which command uploads code to GitHub?</p>
+
+            <button onclick="checkAnswer('A')">git pull</button>
+            <button onclick="checkAnswer('B')">git push</button>
+            <button onclick="checkAnswer('C')">git init</button>
+
+            <div id="quizResult"></div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+const headers = document.querySelectorAll('.card-header');
+
+headers.forEach(header => {
+    header.addEventListener('click', () => {
+
+        const content = header.nextElementSibling;
+
+        if(content.style.display === 'block'){
+            content.style.display = 'none';
+        } else {
+            content.style.display = 'block';
+        }
+
+    });
+});
+
+function checkAnswer(answer){
+
+    const result = document.getElementById('quizResult');
+
+    if(answer === 'B'){
+        result.innerHTML = "✅ Correct! git push uploads code to GitHub.";
+    }else{
+        result.innerHTML = "❌ Wrong Answer. Correct answer is git push.";
+    }
+
+}
+
+</script>
+
+</body>
+</html>
